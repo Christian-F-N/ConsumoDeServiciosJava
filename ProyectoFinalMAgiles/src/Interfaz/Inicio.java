@@ -34,9 +34,10 @@ public class Inicio extends javax.swing.JFrame {
 //        jtNombre.setVisible(false);
         jpActivos.setVisible(false);
         jpFunActivos.setVisible(false);
-        jPModificar.setVisible(false);
+       
         jlista.setModel(modeloLista);
         Jlmensaje.setVisible(false);
+        jLEstadoCuenat.setVisible(false);
 
 //      
     }
@@ -52,45 +53,6 @@ public class Inicio extends javax.swing.JFrame {
 
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        jpIngreso = new javax.swing.JPanel();
-        jtUser = new javax.swing.JTextField();
-        jtPass = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jbIngresar = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
-        jSeparator2 = new javax.swing.JSeparator();
-        jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        Jlmensaje = new javax.swing.JLabel();
-        jpActivos = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jtValidar = new javax.swing.JTable();
-        jbRegresar = new javax.swing.JButton();
-        jbGuardar = new javax.swing.JButton();
-        jtNombre = new javax.swing.JTextField();
-        jBsalir = new javax.swing.JButton();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jtValidacion = new javax.swing.JTable();
-        jLabel10 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jTidPRoc = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        jPModificar = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jBsalir2 = new javax.swing.JButton();
-        jbRegresar1 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
-        jLabel12 = new javax.swing.JLabel();
         jpFunActivos = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -106,6 +68,34 @@ public class Inicio extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         jTActivosusuario = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
+        jpIngreso = new javax.swing.JPanel();
+        jtUser = new javax.swing.JTextField();
+        jtPass = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jbIngresar = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel4 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        Jlmensaje = new javax.swing.JLabel();
+        jLEstadoCuenat = new javax.swing.JLabel();
+        jpActivos = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtValidar = new javax.swing.JTable();
+        jbRegresar = new javax.swing.JButton();
+        jbGuardar = new javax.swing.JButton();
+        jtNombre = new javax.swing.JTextField();
+        jBsalir = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jtValidacion = new javax.swing.JTable();
+        jLabel10 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jTidPRoc = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
         jpSalir = new javax.swing.JPanel();
         jlSalir = new javax.swing.JLabel();
         jlMinimizar = new javax.swing.JLabel();
@@ -127,205 +117,6 @@ public class Inicio extends javax.swing.JFrame {
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jpIngreso.setBackground(new java.awt.Color(255, 255, 255));
-        jpIngreso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 0), 4));
-        jpIngreso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jtUser.setBorder(null);
-        jpIngreso.add(jtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 180, 40));
-
-        jtPass.setBorder(null);
-        jpIngreso.add(jtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 176, 55));
-
-        jLabel1.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
-        jLabel1.setText("Usuario :");
-        jpIngreso.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
-        jLabel2.setText("Contraseña :");
-        jpIngreso.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Cooper Black", 0, 36)); // NOI18N
-        jLabel3.setText("Registro");
-        jpIngreso.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
-
-        jbIngresar.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
-        jbIngresar.setText("Ingresar");
-        jbIngresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbIngresarActionPerformed(evt);
-            }
-        });
-        jpIngreso.add(jbIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 100, 40));
-        jpIngreso.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, 230, 20));
-        jpIngreso.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 230, 20));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_User_96px_2.png"))); // NOI18N
-        jpIngreso.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, -1, -1));
-
-        jButton1.setText("Desbloquear");
-        jButton1.setBorder(null);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jpIngreso.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, 90, 30));
-        jpIngreso.add(Jlmensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 80, 40));
-
-        getContentPane().add(jpIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 42, 560, 600));
-
-        jpActivos.setBackground(new java.awt.Color(255, 255, 255));
-        jpActivos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
-        jpActivos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel5.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
-        jLabel5.setText("Asignar un Identificdor:");
-        jpActivos.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
-        jLabel6.setText("Proceso de validacion");
-        jpActivos.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
-
-        jtValidar.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
-        jtValidar.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane1.setViewportView(jtValidar);
-
-        jpActivos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, 150));
-
-        jbRegresar.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
-        jbRegresar.setText("Regresar");
-        jbRegresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbRegresarActionPerformed(evt);
-            }
-        });
-        jpActivos.add(jbRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, -1, -1));
-
-        jbGuardar.setFont(new java.awt.Font("Cooper Black", 0, 12)); // NOI18N
-        jbGuardar.setText("Guardar");
-        jbGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbGuardarActionPerformed(evt);
-            }
-        });
-        jpActivos.add(jbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, -1, -1));
-        jpActivos.add(jtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 180, 30));
-
-        jBsalir.setBackground(new java.awt.Color(255, 255, 255));
-        jBsalir.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jBsalir.setText("Cerrar secion");
-        jBsalir.setBorder(null);
-        jBsalir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBsalirActionPerformed(evt);
-            }
-        });
-        jpActivos.add(jBsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 30));
-
-        jtValidacion.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane6.setViewportView(jtValidacion);
-
-        jpActivos.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 380, 130));
-
-        jLabel10.setText("Lista de procesos existentes.");
-        jpActivos.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, -1));
-
-        jButton2.setText("Modificar Proceso");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jpActivos.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 450, -1, -1));
-        jpActivos.add(jTidPRoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 180, 30));
-
-        jLabel13.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
-        jLabel13.setText("Asignar nombre :");
-        jpActivos.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
-
-        getContentPane().add(jpActivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 560, 600));
-
-        jPModificar.setBackground(new java.awt.Color(255, 255, 255));
-        jPModificar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 255), 4));
-        jPModificar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel11.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
-        jLabel11.setText("Proceso");
-        jPModificar.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 110, 40));
-
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane7.setViewportView(jTable4);
-
-        jPModificar.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, 90));
-
-        jButton3.setText("Actualizar proceso");
-        jPModificar.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, -1, -1));
-
-        jButton4.setText("Eliminar del proceso");
-        jPModificar.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
-
-        jBsalir2.setBackground(new java.awt.Color(255, 255, 255));
-        jBsalir2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jBsalir2.setText("Cerrar secion");
-        jBsalir2.setBorder(null);
-        jBsalir2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBsalir2ActionPerformed(evt);
-            }
-        });
-        jPModificar.add(jBsalir2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 30));
-
-        jbRegresar1.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
-        jbRegresar1.setText("Regresar");
-        jbRegresar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbRegresar1ActionPerformed(evt);
-            }
-        });
-        jPModificar.add(jbRegresar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 550, -1, -1));
-
-        jButton5.setText("Agergar al proceso");
-        jPModificar.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, -1, -1));
-
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane8.setViewportView(jTable5);
-
-        jPModificar.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, -1, 90));
-
-        jLabel12.setText("Lista de activos sin validar");
-        jPModificar.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, -1, -1));
-
-        getContentPane().add(jPModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 560, 600));
 
         jpFunActivos.setBackground(new java.awt.Color(255, 255, 255));
         jpFunActivos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -420,6 +211,140 @@ public class Inicio extends javax.swing.JFrame {
 
         getContentPane().add(jpFunActivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 560, 600));
 
+        jpIngreso.setBackground(new java.awt.Color(255, 255, 255));
+        jpIngreso.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 0), 4));
+        jpIngreso.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jtUser.setBorder(null);
+        jpIngreso.add(jtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 180, 40));
+
+        jtPass.setBorder(null);
+        jpIngreso.add(jtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 176, 55));
+
+        jLabel1.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel1.setText("Usuario :");
+        jpIngreso.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Cooper Black", 0, 18)); // NOI18N
+        jLabel2.setText("Contraseña :");
+        jpIngreso.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Cooper Black", 0, 36)); // NOI18N
+        jLabel3.setText("Registro");
+        jpIngreso.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, -1, -1));
+
+        jbIngresar.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        jbIngresar.setText("Ingresar");
+        jbIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbIngresarActionPerformed(evt);
+            }
+        });
+        jpIngreso.add(jbIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, 100, 40));
+        jpIngreso.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, 230, 20));
+        jpIngreso.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 230, 20));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8_User_96px_2.png"))); // NOI18N
+        jpIngreso.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, -1, -1));
+
+        jButton1.setText("Desbloquear");
+        jButton1.setBorder(null);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jpIngreso.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, 90, 30));
+        jpIngreso.add(Jlmensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 80, 40));
+        jpIngreso.add(jLEstadoCuenat, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 70, 30));
+
+        getContentPane().add(jpIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 42, 560, 600));
+
+        jpActivos.setBackground(new java.awt.Color(255, 255, 255));
+        jpActivos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4));
+        jpActivos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        jLabel5.setText("Asignar un Identificdor:");
+        jpActivos.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Cooper Black", 0, 24)); // NOI18N
+        jLabel6.setText("Proceso de validacion");
+        jpActivos.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
+
+        jtValidar.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
+        jtValidar.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(jtValidar);
+
+        jpActivos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, 150));
+
+        jbRegresar.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        jbRegresar.setText("Regresar");
+        jbRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbRegresarActionPerformed(evt);
+            }
+        });
+        jpActivos.add(jbRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, -1, -1));
+
+        jbGuardar.setFont(new java.awt.Font("Cooper Black", 0, 12)); // NOI18N
+        jbGuardar.setText("Guardar");
+        jbGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbGuardarActionPerformed(evt);
+            }
+        });
+        jpActivos.add(jbGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, -1, -1));
+        jpActivos.add(jtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 110, 180, 30));
+
+        jBsalir.setBackground(new java.awt.Color(255, 255, 255));
+        jBsalir.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        jBsalir.setText("Cerrar secion");
+        jBsalir.setBorder(null);
+        jBsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBsalirActionPerformed(evt);
+            }
+        });
+        jpActivos.add(jBsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 30));
+
+        jtValidacion.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane6.setViewportView(jtValidacion);
+
+        jpActivos.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 380, 130));
+
+        jLabel10.setText("Lista de procesos existentes.");
+        jpActivos.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, -1));
+
+        jButton2.setText("Modificar Proceso");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jpActivos.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 450, -1, -1));
+        jpActivos.add(jTidPRoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 180, 30));
+
+        jLabel13.setFont(new java.awt.Font("Cooper Black", 0, 14)); // NOI18N
+        jLabel13.setText("Asignar nombre :");
+        jpActivos.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
+
+        getContentPane().add(jpActivos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 560, 600));
+
         jpSalir.setBackground(new java.awt.Color(255, 255, 255));
         jpSalir.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 0), 4));
         jpSalir.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -480,24 +405,33 @@ public class Inicio extends javax.swing.JFrame {
     private void jbIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIngresarActionPerformed
         String user = jtUser.getText();
         String pass = jtPass.getText();
-        ctrl.login(user, pass);
+        ctrl.estadoCuenta(user);
+        String est=jLEstadoCuenat.getText();
+        if(est=="A"){
+            ctrl.login(user, pass);
         String cont = Jlmensaje.getText();
 
         if (cont != "Bienvenido") {
+             if(est=="A"){
             blok++;
-            JOptionPane.showMessageDialog(null, "Credenciales incorrectas.\nSu cuneta se blokeara en:\n" + blok + "/3 Intentos");
+            JOptionPane.showMessageDialog(null, "Credenciales incorrectas.\nSu cuneta se bloqueara en:\n" + blok + "/3 Intentos");
             if (blok == 3) {
                 JOptionPane.showMessageDialog(null, "Cuenta bloqueada");
                 ctrl.bloquear(user);
                 blok = 0;
             }
-
+        }
         } else {
             blok = 0;
             encargado = user;
             JOptionPane.showMessageDialog(null, "Bienvenido");
             ctrl.activarpanel(2);
         }
+        }else{
+            JOptionPane.showMessageDialog(null, "Su cuenta esta bloqueada");
+           
+        }
+        
 
     }//GEN-LAST:event_jbIngresarActionPerformed
 
@@ -563,19 +497,10 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jBsalir1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String cuenta=jtUser.getText();
+      String cuenta = JOptionPane.showInputDialog("Ingrese su usuario");
         ctrl.desbloquear(cuenta);
+       
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jBsalir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalir2ActionPerformed
-        modeloLista.removeAllElements();
-        encargado = "";
-        ctrl.activarpanel(1);
-    }//GEN-LAST:event_jBsalir2ActionPerformed
-
-    private void jbRegresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRegresar1ActionPerformed
-        ctrl.activarpanel(3);
-    }//GEN-LAST:event_jbRegresar1ActionPerformed
 
     private void jTActivosusuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTActivosusuarioMouseClicked
 
@@ -626,16 +551,11 @@ public class Inicio extends javax.swing.JFrame {
     public static javax.swing.JLabel Jlmensaje;
     private javax.swing.JButton jBsalir;
     private javax.swing.JButton jBsalir1;
-    private javax.swing.JButton jBsalir2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    public static javax.swing.JLabel jLEstadoCuenat;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -645,27 +565,21 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    public static javax.swing.JPanel jPModificar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     public static javax.swing.JTable jTActivosusuario;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable5;
     private javax.swing.JTextField jTidPRoc;
     private javax.swing.JButton jbAgregarlista;
     private javax.swing.JButton jbGuardar;
     private javax.swing.JButton jbIngresar;
     private javax.swing.JButton jbRegresar;
-    private javax.swing.JButton jbRegresar1;
     private javax.swing.JButton jbValidar2;
     private javax.swing.JButton jbquitarlista;
     private javax.swing.JLabel jlMinimizar;

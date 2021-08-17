@@ -51,26 +51,26 @@ public class Operaciones {
                 Inicio.jpFunActivos.setVisible(false);
                 Inicio.jpIngreso.setVisible(true);
                 Inicio.jpActivos.setVisible(false);
-                Inicio.jPModificar.setVisible(false);
+           
                 break;
             case 2:
                 Inicio.jpFunActivos.setVisible(true);
                 Inicio.jpIngreso.setVisible(false);
                 Inicio.jpActivos.setVisible(false);
-                Inicio.jPModificar.setVisible(false);
+              
                 break;
             case 3:
                 Inicio.jtNombre.setEnabled(true);
                 Inicio.jpFunActivos.setVisible(false);
                 Inicio.jpIngreso.setVisible(false);
                 Inicio.jpActivos.setVisible(true);
-                Inicio.jPModificar.setVisible(false);
+           
                 break;
             case 4:
                 Inicio.jpFunActivos.setVisible(false);
                 Inicio.jpIngreso.setVisible(false);
                 Inicio.jpActivos.setVisible(false);
-                Inicio.jPModificar.setVisible(true);
+     
                 break;
             default:
                 break;
@@ -109,7 +109,7 @@ public class Operaciones {
                     } catch (JSONException e) {
                     }
                 } else {
-                    System.out.println("fallo");
+
                 }
 
             }
@@ -200,7 +200,7 @@ public class Operaciones {
     public void login(String user, String pass) {
 
         HttpClient cliente2 = new HttpClient(new OnHttpRequestComplete() {
-             
+
             @Override
             public void onComplete(Response status) {
                 String ingreso = "";
@@ -227,25 +227,10 @@ public class Operaciones {
             }
         });
         cliente2.excecute("http://20.83.40.78/ma/views/login.php?ced_usu=" + user + "&cla_cue=" + pass);
-        
 
     }
-    
-    
-      public void guardarproceso(String id,String nomb,String responsable){
-       HttpClient cliente2 = new HttpClient(new OnHttpRequestComplete() {
-            @Override
-            public void onComplete(Response status) {
-                if (status.isSuccess()) {
-                     JOptionPane.showMessageDialog(null, "Guardado con exito"); 
-                }
 
-            }
-        });
-        cliente2.excecute("http://20.83.40.78/ma/views/guargarValidacion.php?id_pro="+id+"&nom_pro="+nomb+"&id_res_pro="+responsable);  
-    }
-    
-    public void guardaractivos(String idActivo,String IDvalidacion){
+    public void guardarproceso(String id, String nomb, String responsable) {
         HttpClient cliente2 = new HttpClient(new OnHttpRequestComplete() {
             @Override
             public void onComplete(Response status) {
@@ -255,36 +240,68 @@ public class Operaciones {
 
             }
         });
-        cliente2.excecute("http://20.83.40.78/ma/views/guardaractPro.php?id_act_per="+idActivo+"&id_val_per="+IDvalidacion);
+        cliente2.excecute("http://20.83.40.78/ma/views/guargarValidacion.php?id_pro=" + id + "&nom_pro=" + nomb + "&id_res_pro=" + responsable);
     }
-    
-    
-    
-  public void bloquear(String cuenta){
+
+    public void guardaractivos(String idActivo, String IDvalidacion) {
         HttpClient cliente2 = new HttpClient(new OnHttpRequestComplete() {
             @Override
             public void onComplete(Response status) {
                 if (status.isSuccess()) {
-                   
+                    JOptionPane.showMessageDialog(null, "Guardado con exito");
                 }
-                JOptionPane.showMessageDialog(null, status);
+
             }
         });
-        cliente2.excecute("http://20.83.40.78/ma/views/bloquear.php?ced_usu="+cuenta);
-    }   
-    
-    
-  public void desbloquear(String cuenta){
+        cliente2.excecute("http://20.83.40.78/ma/views/guardaractPro.php?id_act_per=" + idActivo + "&id_val_per=" + IDvalidacion);
+    }
+
+    public void bloquear(String cuenta) {
         HttpClient cliente2 = new HttpClient(new OnHttpRequestComplete() {
             @Override
             public void onComplete(Response status) {
                 if (status.isSuccess()) {
+
+                }
+
+            }
+        });
+        cliente2.excecute("http://20.83.40.78/ma/views/bloquear.php?ced_usu=" + cuenta);
+    }
+
+    public void desbloquear(String cuenta) {
+        HttpClient cliente2 = new HttpClient(new OnHttpRequestComplete() {
+            @Override
+            public void onComplete(Response status) {
+                if (status.isSuccess()) {
+                    JOptionPane.showMessageDialog(null, "Cuenta desbloqueada");
+                }
+
+            }
+        });
+        cliente2.excecute("http://20.83.40.78/ma/views/desbloquear.php?ced_usu=" + cuenta);
+    }
+
+    public void estadoCuenta(String user) {
+
+       HttpClient cliente2 = new HttpClient(new OnHttpRequestComplete() {
+            @Override
+            public void onComplete(Response status) {
+                if (status.isSuccess()) {
+                    JSONObject resp = new JSONObject(status.getResult());
+                    int num = resp.length();
+                    if (num != 0) {
+                        Inicio.jLEstadoCuenat.setText("A");
+                    }else{
+                         Inicio.jLEstadoCuenat.setText("B");
+                    }
                     
                 }
 
             }
         });
-        cliente2.excecute("http://20.83.40.78/ma/views/desbloquear.php?ced_usu="+cuenta);
-    }   
-    
+        cliente2.excecute("http://20.83.40.78/ma/views/estadoCuenta.php?ced_usu="+user);
+
+    }
+
 }
