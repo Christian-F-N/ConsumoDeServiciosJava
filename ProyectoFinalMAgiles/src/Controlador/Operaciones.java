@@ -4,6 +4,8 @@ import Interfaz.Inicio;
 import com.devazt.networking.HttpClient;
 import com.devazt.networking.OnHttpRequestComplete;
 import com.devazt.networking.Response;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.json.JSONException;
@@ -51,26 +53,28 @@ public class Operaciones {
                 Inicio.jpFunActivos.setVisible(false);
                 Inicio.jpIngreso.setVisible(true);
                 Inicio.jpActivos.setVisible(false);
-           
+                Inicio.jtPass.setText("");
+                Inicio.jtUser.setText("");
+
                 break;
             case 2:
                 Inicio.jpFunActivos.setVisible(true);
                 Inicio.jpIngreso.setVisible(false);
                 Inicio.jpActivos.setVisible(false);
-              
+
                 break;
             case 3:
                 Inicio.jtNombre.setEnabled(true);
                 Inicio.jpFunActivos.setVisible(false);
                 Inicio.jpIngreso.setVisible(false);
                 Inicio.jpActivos.setVisible(true);
-           
+
                 break;
             case 4:
                 Inicio.jpFunActivos.setVisible(false);
                 Inicio.jpIngreso.setVisible(false);
                 Inicio.jpActivos.setVisible(false);
-     
+
                 break;
             default:
                 break;
@@ -89,8 +93,8 @@ public class Operaciones {
                         modelo.addColumn("Id");
                         modelo.addColumn("Nombre");
                         modelo.addColumn("Estado");
-                        modelo.addColumn("Cod. Bearras");
-                        modelo.addColumn("Descripcion");
+                        modelo.addColumn("Cod. Barras");
+                        modelo.addColumn("Descripción");
                         modelo.addColumn("Ced. Usuario");
                         Inicio.jTActivosusuario.setModel(modelo);
 
@@ -123,8 +127,8 @@ public class Operaciones {
         modelo.addColumn("Id");
         modelo.addColumn("Nombre");
         modelo.addColumn("Estado");
-        modelo.addColumn("Cod. Bearras");
-        modelo.addColumn("Descripcion");
+        modelo.addColumn("Cod. Barras");
+        modelo.addColumn("Descripción");
         modelo.addColumn("Ced. Usuario");
         Inicio.jtValidar.setModel(modelo);
         for (int i = 0; i < activo.length; i++) {
@@ -231,16 +235,19 @@ public class Operaciones {
     }
 
     public void guardarproceso(String id, String nomb, String responsable) {
+        String fec = fecha();
         HttpClient cliente2 = new HttpClient(new OnHttpRequestComplete() {
             @Override
             public void onComplete(Response status) {
                 if (status.isSuccess()) {
-                    JOptionPane.showMessageDialog(null, "Guardado con exito");
+                    JOptionPane.showMessageDialog(null, "Guardado con éxito");
+                } else {
+                    JOptionPane.showMessageDialog(null, "No se pudo guardar");
                 }
 
             }
         });
-        cliente2.excecute("http://20.83.40.78/ma/views/guargarValidacion.php?id_pro=" + id + "&nom_pro=" + nomb + "&id_res_pro=" + responsable);
+        cliente2.excecute("http://20.83.40.78/ma/views/guargarValidacion.php?id_pro=" + id + "&nom_pro=" + nomb + "&id_res_pro=" + responsable + "&fec_hor_pro=" + fec);
     }
 
     public void guardaractivos(String idActivo, String IDvalidacion) {
@@ -248,7 +255,7 @@ public class Operaciones {
             @Override
             public void onComplete(Response status) {
                 if (status.isSuccess()) {
-                    JOptionPane.showMessageDialog(null, "Guardado con exito");
+
                 }
 
             }
@@ -273,8 +280,11 @@ public class Operaciones {
         HttpClient cliente2 = new HttpClient(new OnHttpRequestComplete() {
             @Override
             public void onComplete(Response status) {
+
                 if (status.isSuccess()) {
+
                     JOptionPane.showMessageDialog(null, "Cuenta desbloqueada");
+
                 }
 
             }
@@ -284,7 +294,7 @@ public class Operaciones {
 
     public void estadoCuenta(String user) {
 
-       HttpClient cliente2 = new HttpClient(new OnHttpRequestComplete() {
+        HttpClient cliente2 = new HttpClient(new OnHttpRequestComplete() {
             @Override
             public void onComplete(Response status) {
                 if (status.isSuccess()) {
@@ -292,16 +302,154 @@ public class Operaciones {
                     int num = resp.length();
                     if (num != 0) {
                         Inicio.jLEstadoCuenat.setText("A");
-                    }else{
-                         Inicio.jLEstadoCuenat.setText("B");
+                    } else {
+                        Inicio.jLEstadoCuenat.setText("B");
                     }
-                    
+
                 }
 
             }
         });
-        cliente2.excecute("http://20.83.40.78/ma/views/estadoCuenta.php?ced_usu="+user);
+        cliente2.excecute("http://20.83.40.78/ma/views/estadoCuenta.php?ced_usu=" + user);
 
     }
 
-}
+    public void ConsultarProceso(String proceso) {
+        HttpClient cliente2 = new HttpClient(new OnHttpRequestComplete() {
+            @Override
+            public void onComplete(Response status) {
+                if (status.isSuccess()) {
+                    JSONObject resp = new JSONObject(status.getResult());
+                    int num = resp.length();
+                    if (num != 0) {
+                        Inicio.jLStadVal.setText("si");
+                    } else {
+                        Inicio.jLStadVal.setText("no");
+                    }
+
+                }
+
+            }
+        });
+        cliente2.excecute("http://20.83.40.78/ma/views/conValid.php?id_pro=" + proceso);
+    }
+
+    public void login2(String user, String pass) {
+
+        HttpClient cliente2 = new HttpClient(new OnHttpRequestComplete() {
+
+            @Override
+            public void onComplete(Response status) {
+                String ingreso = "";
+                if (status.isSuccess()) {
+                    try {
+                        JSONObject resp = new JSONObject(status.getResult());
+                        int num = resp.length();
+                        if (num == 0) {
+                            Inicio.Jlmensaje.setText("Credenciales incorrectas");
+                        } else {
+                            Inicio.Jlmensaje.setText(ingreso = "Bienvenido");
+                            for (int i = 0; i < resp.length(); i++) {
+
+                                Object[] obj = new Object[4];
+                                obj[1] = resp.getJSONObject("" + i + "").get("ced_usu").toString();
+                                obj[2] = resp.getJSONObject("" + i + "").get("nom_cue").toString();
+                                obj[3] = resp.getJSONObject("" + i + "").get("cla_cue").toString();
+
+                            }
+                        }
+                    } catch (JSONException e) {
+                    }
+                }
+            }
+        });
+        cliente2.excecute("http://20.83.40.78/ma/views/log2.php?ced_usu=" + user + "&cla_cue=" + pass);
+
+    }
+
+    public String fecha() {
+        Date fecha = new Date();
+        SimpleDateFormat formato = new SimpleDateFormat("YYYY/MM/dd");
+        String fec = formato.format(fecha);
+        return fec;
+    }
+
+    public void verificarAdmin(String user, String clave) {
+        HttpClient cliente2 = new HttpClient(new OnHttpRequestComplete() {
+
+            @Override
+            public void onComplete(Response status) {
+                String ingreso = "";
+                if (status.isSuccess()) {
+                    try {
+                        JSONObject resp = new JSONObject(status.getResult());
+                        int num = resp.length();
+                        if (num == 0) {
+                            Inicio.jlAdmin.setText("no");
+                            JOptionPane.showMessageDialog(null, "Usted no esta registrado como administrador");
+                        } else {
+                            Object[] obj = new Object[1];
+                            obj[0] = resp.getJSONObject("" + 0 + "").get("nom_usu").toString();
+                            Inicio.jlAdmin.setText("ok");
+
+                            JOptionPane.showMessageDialog(null, "Bienvenido " + obj[0]);
+                        }
+                    } catch (JSONException e) {
+
+                    }
+                }
+            }
+        });
+        cliente2.excecute("http://20.83.40.78/ma/views/buscAdmin.php?ced_usu=" + user + "&cla_cue=" + clave);
+    }
+
+    public void asigRol(String user, String rol) {
+        HttpClient cliente2 = new HttpClient(new OnHttpRequestComplete() {
+
+            @Override
+            public void onComplete(Response status) {
+               
+                if (status.isSuccess()) {
+//                    JSONObject resp = new JSONObject(status.getResult());
+//                    int num = resp.length();
+//                    if (num == 0) {
+                        JOptionPane.showMessageDialog(null, "Asignación terminada.");
+                        Inicio.jlAdmin.setText("asignar");
+//                    }
+
+                } else {
+                    Inicio.jlAdmin.setText("no");
+                }
+            }
+        });
+        cliente2.excecute("http://20.83.40.78/ma/views/cambiarRol.php?ced_usu=" + user + "&rol_usu=" + rol);
+    }
+    
+     public void usu(String user) {
+
+        HttpClient cliente2 = new HttpClient(new OnHttpRequestComplete() {
+
+            @Override
+            public void onComplete(Response status) {
+                String ingreso = "";
+                if (status.isSuccess()) {
+                    try {
+                        JSONObject resp = new JSONObject(status.getResult());
+                        int num = resp.length();
+                        if (num == 0) {
+                            Inicio.Jlmensaje.setText("Credenciales incorrectas");
+                            Inicio.val.setText("no");
+                        } else {
+                            
+                            Inicio.val.setText("si");
+                        }
+                    } catch (JSONException e) {
+                    }
+                }
+            }
+        });
+        cliente2.excecute("http://20.83.40.78/ma/views/usuario.php?ced_usu="+user);
+
+    }
+} 
+
